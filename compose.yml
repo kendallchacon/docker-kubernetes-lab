@@ -1,0 +1,14 @@
+services:
+  orders-service:
+    build: ./orders-service
+    expose:
+      - "3001"
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "8080:8080"
+    environment:
+      ORDERS_SERVICE_URL: http://orders-service:3001
+    depends_on:
+      - orders-service

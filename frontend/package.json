@@ -1,0 +1,16 @@
+{
+  "name": "orders-frontend",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Frontend y proxy de pedidos para el laboratorio Docker y Kubernetes",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=22 <23"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}

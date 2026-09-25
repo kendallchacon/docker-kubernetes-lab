@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#102b2b">
+  <title>Sistema de pedidos | Laboratorio</title>
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <div class="page-shell">
+    <header class="topbar">
+      <div class="brand"><span class="brand-mark" aria-hidden="true">▦</span> LAB / PEDIDOS</div>
+      <span class="lab-label">DOCKER + KUBERNETES</span>
+    </header>
+
+    <main class="layout">
+      <section class="intro" aria-labelledby="page-title">
+        <span class="eyebrow"><span class="eyebrow-dot"></span> LABORATORIO EN VIVO</span>
+        <h1 id="page-title">Una tienda pequeña.<br><em>Una arquitectura real.</em></h1>
+        <p>Elige un producto y envía un pedido. Cada respuesta muestra la instancia que lo procesó.</p>
+        <div class="flow" aria-label="Ruta del pedido">
+          <span>Navegador</span><b aria-hidden="true">→</b><span>Frontend</span><b aria-hidden="true">→</b><span>Orders Service</span>
+        </div>
+      </section>
+
+      <section class="shop-panel" aria-labelledby="products-title">
+        <div class="section-heading">
+          <div><span class="section-kicker">01 / SELECCIÓN</span><h2 id="products-title">Productos disponibles</h2></div>
+          <span class="item-count">03 artículos</span>
+        </div>
+
+        <form id="order-form">
+          <fieldset class="products">
+            <legend class="visually-hidden">Selecciona un producto</legend>
+            <label class="product-card">
+              <input type="radio" name="product" value="mouse" checked>
+              <span class="product-icon" aria-hidden="true">⌁</span>
+              <span class="product-text"><strong>Mouse inalámbrico</strong><small>Precisión en cada clic</small></span>
+              <span class="selection-indicator" aria-hidden="true"></span>
+            </label>
+            <label class="product-card">
+              <input type="radio" name="product" value="keyboard">
+              <span class="product-icon" aria-hidden="true">⌨</span>
+              <span class="product-text"><strong>Teclado mecánico</strong><small>Para crear sin pausa</small></span>
+              <span class="selection-indicator" aria-hidden="true"></span>
+            </label>
+            <label class="product-card">
+              <input type="radio" name="product" value="headphones">
+              <span class="product-icon" aria-hidden="true">♫</span>
+              <span class="product-text"><strong>Audífonos</strong><small>Concéntrate en lo importante</small></span>
+              <span class="selection-indicator" aria-hidden="true"></span>
+            </label>
+          </fieldset>
+
+          <div class="order-controls">
+            <div class="quantity-control">
+              <label for="quantity">Cantidad</label>
+              <input id="quantity" name="quantity" type="number" min="1" max="99" step="1" value="1" required>
+            </div>
+            <button id="submit-button" type="submit">Realizar pedido <span aria-hidden="true">↗</span></button>
+          </div>
+        </form>
+
+        <div id="feedback" class="feedback" role="status" aria-live="polite" hidden></div>
+      </section>
+    </main>
+    <footer>LABORATORIO DE CONTENEDORES <span aria-hidden="true">·</span> SIN DATOS PERSISTENTES</footer>
+  </div>
+</body>
+</html>
