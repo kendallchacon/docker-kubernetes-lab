@@ -27,14 +27,17 @@ app.post('/orders', (req, res) => {
     return res.status(400).json({ error: 'La cantidad debe ser un entero entre 1 y 99.' });
   }
 
-  return res.status(201).json({
+  const order = {
     orderId: randomUUID(),
     product,
     productName: products[product],
     quantity,
     status: 'received',
     processedBy: os.hostname()
-  });
+  };
+
+  console.log(`[ORDER] id=${order.orderId} product=${order.product} quantity=${order.quantity} processedBy=${order.processedBy}`);
+  return res.status(201).json(order);
 });
 
 app.use((error, _req, res, _next) => {
@@ -49,7 +52,7 @@ app.use((error, _req, res, _next) => {
 });
 
 const server = app.listen(port, '0.0.0.0', () => {
-  console.log(`Orders Service escuchando en el puerto ${port}`);
+  console.log(`[START] Orders Service | instance=${os.hostname()} | port=${port}`);
 });
 
 function shutdown() {

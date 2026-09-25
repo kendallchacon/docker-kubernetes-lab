@@ -51,3 +51,5 @@ Antes de empezar, confirmar que las dos imágenes del workflow ya se publicaron 
 | 15. Limpiar | Detener `port-forward` con `Ctrl+C`; ejecutar `kubectl delete -f kubernetes/`. | Recursos del laboratorio eliminados. | Limpieza declarativa. |
 
 El comando de port-forward ocupa una terminal: abrir una segunda para las acciones siguientes. Si el escenario no ofrece una pestaña web para el puerto 8080, usar la segunda terminal y `curl`. Mantener el port-forward activo mientras se prueba la aplicación.
+
+Para ver qué Pod procesó cada pedido, ejecutar `kubectl logs -l app=orders-service --prefix=true --tail=50`. Para seguir los pedidos en vivo mientras se envían desde la tienda, usar `kubectl logs -l app=orders-service --prefix=true --tail=10 -f --max-log-requests=10`. `Ctrl + C` detiene el seguimiento en vivo.
