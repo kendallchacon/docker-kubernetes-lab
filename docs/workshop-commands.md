@@ -8,7 +8,7 @@ Abrir [Play with Docker](https://labs.play-with-docker.com/) y crear una instanc
 
 | Paso y objetivo | Comando | Qué observar | Concepto |
 | --- | --- | --- | --- |
-| 1. Obtener el laboratorio | `git clone https://github.com/kendllchacon/docker-kubernetes-lab.git && cd docker-kubernetes-lab` | Carpetas de ambos servicios y `compose.yml`. | Código fuente compartido. |
+| 1. Obtener el laboratorio | `git clone https://github.com/kendallchacon/docker-kubernetes-lab.git && cd docker-kubernetes-lab` | Carpetas de ambos servicios y `compose.yml`. | Código fuente compartido. |
 | 2. Construir la API | `docker build -t lab-orders ./orders-service` | Docker procesa el Dockerfile y crea `lab-orders`. | Dockerfile → imagen. |
 | 3. Construir el frontend | `docker build -t lab-frontend ./frontend` | Segunda imagen independiente. | Separación de componentes. |
 | 4. Listar imágenes | `docker image ls` | Aparecen `lab-orders` y `lab-frontend`. | Imágenes locales. |
@@ -35,7 +35,7 @@ Antes de empezar, confirmar que las dos imágenes del workflow ya se publicaron 
 | Paso y objetivo | Comando | Qué observar | Concepto |
 | --- | --- | --- | --- |
 | 1. Verificar clúster | `kubectl get nodes` | Al menos un nodo `Ready`. | Clúster disponible. |
-| 2. Obtener código | `git clone https://github.com/kendllchacon/docker-kubernetes-lab.git && cd docker-kubernetes-lab` | Directorio `kubernetes/`. | Manifiestos declarativos. |
+| 2. Obtener código | `git clone https://github.com/kendallchacon/docker-kubernetes-lab.git && cd docker-kubernetes-lab` | Directorio `kubernetes/`. | Manifiestos declarativos. |
 | 3. Desplegar | `kubectl apply -f kubernetes/` | Dos Deployments y dos Services creados. | Estado deseado. |
 | 4. Esperar disponibilidad | `kubectl rollout status deployment/orders-service && kubectl rollout status deployment/frontend` | Ambos rollouts completados. | Readiness y disponibilidad. |
 | 5. Revisar Deployments | `kubectl get deployments` | Una réplica Ready por servicio. | Controladores. |

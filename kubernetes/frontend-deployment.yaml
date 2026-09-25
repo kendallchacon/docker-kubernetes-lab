@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: frontend
-          image: ghcr.io/kendllchacon/docker-kubernetes-lab-frontend:latest
+          image: ghcr.io/kendallchacon/docker-kubernetes-lab-frontend:latest
           imagePullPolicy: Always
           ports:
             - containerPort: 8080

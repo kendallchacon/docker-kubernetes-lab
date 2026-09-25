@@ -33,7 +33,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v5
         with:
-          images: ghcr.io/kendllchacon/docker-kubernetes-lab-${{ matrix.service }}
+          images: ghcr.io/kendallchacon/docker-kubernetes-lab-${{ matrix.service }}
           tags: |
             type=raw,value=latest
             type=sha,format=short

@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: orders-service
-          image: ghcr.io/kendllchacon/docker-kubernetes-lab-orders-service:latest
+          image: ghcr.io/kendallchacon/docker-kubernetes-lab-orders-service:latest
           imagePullPolicy: Always
           ports:
             - containerPort: 3001

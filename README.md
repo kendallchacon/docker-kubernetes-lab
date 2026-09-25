@@ -34,7 +34,7 @@ Cada servicio tiene su propio `Dockerfile`, `package.json`, `package-lock.json` 
 En una sesión de [Play with Docker](https://labs.play-with-docker.com/), agrega una instancia y clona el repositorio:
 
 ```sh
-git clone https://github.com/kendllchacon/docker-kubernetes-lab.git
+git clone https://github.com/kendallchacon/docker-kubernetes-lab.git
 cd docker-kubernetes-lab
 ```
 
@@ -83,7 +83,7 @@ El guion completo y las observaciones esperadas están en [docs/workshop-command
 Las imágenes deben existir en GHCR y ser **públicas** antes de desplegar. En un escenario de Kubernetes de [Killercoda](https://killercoda.com/):
 
 ```sh
-git clone https://github.com/kendllchacon/docker-kubernetes-lab.git
+git clone https://github.com/kendallchacon/docker-kubernetes-lab.git
 cd docker-kubernetes-lab
 kubectl get nodes
 kubectl apply -f kubernetes/
@@ -128,8 +128,8 @@ kubectl delete -f kubernetes/
 
 El workflow [.github/workflows/publish-images.yml](.github/workflows/publish-images.yml) se ejecuta al hacer push a `main`. Publica `latest` y una etiqueta corta basada en SHA para cada imagen:
 
-- `ghcr.io/kendllchacon/docker-kubernetes-lab-frontend:latest`
-- `ghcr.io/kendllchacon/docker-kubernetes-lab-orders-service:latest`
+- `ghcr.io/kendallchacon/docker-kubernetes-lab-frontend:latest`
+- `ghcr.io/kendallchacon/docker-kubernetes-lab-orders-service:latest`
 
 Usa `GITHUB_TOKEN` con permisos `contents: read` y `packages: write`; no necesita secretos manuales. **Después de la primera publicación, cambia la visibilidad de ambos paquetes de GHCR a pública en la configuración de paquetes de GitHub.** Killercoda necesita descargarlos sin autenticación. Si el repositorio o propietario cambia, actualiza las dos referencias de imagen de Kubernetes y el workflow.
 
